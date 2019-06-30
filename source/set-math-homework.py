@@ -10,11 +10,6 @@ import random
 
 # 编写 n 行 m 列 的小学加减乘除测试题
 
-# 变量初始化
-rows = 20        # 总行数
-columns = 5     # 总列数
-count = 0       # 总出题数
-
 # 打开题目文件清空之前内容
 file1 = "math_ask.txt"
 f1 = open(file1, 'w')  # 先清空文件内容
@@ -32,6 +27,12 @@ f2.close()
 # 再次以追加方式打开文件
 f1 = open(file1, 'a')  # 追加方式一次加一行
 f2 = open(file2, 'a')  # 追加方式一次加一行
+
+
+# 变量初始化
+rows = 20        # 总行数
+columns = 5     # 总列数
+count = 0       # 总出题数
 
 # 自动生成题目
 # 按行数循环
