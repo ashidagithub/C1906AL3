@@ -30,7 +30,7 @@ f2 = open(file2, 'a')  # 追加方式一次加一行
 
 
 # 变量初始化
-rows = 20        # 总行数
+rows = 20       # 总行数
 columns = 5     # 总列数
 count = 0       # 总出题数
 
@@ -48,9 +48,9 @@ for n in range(1, rows + 1):
         # 记录总出题数
         count += 1
 
-        # 随机生成2个 0-99 之间的整数
-        a = random.randint(0, 99)
-        b = random.randint(0, 99)
+        # 随机生成2个 0-100 之间的整数
+        a = random.randint(0, 100)
+        b = random.randint(0, 100)
 
         # 随机生成运算符
         op = random.randint(1, 4)
