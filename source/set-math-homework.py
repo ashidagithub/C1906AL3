@@ -58,47 +58,47 @@ for n in range(1, rows + 1):
         # 生成计算式
         # 加法计算式
         if op == 1:
-            line1 += "%d + %d = \t\t\t" % (a, b)
+            line1 += "%2d + %2d = \t\t\t" % (a, b)
             answer = a + b
-            line2 += "%d + %d = %d \t\t\t" % (a, b, answer)
+            line2 += "%2d + %2d = %2d \t\t\t" % (a, b, answer)
         # 减法计算式 - 不能出现负数
         if op == 2:
             if a >= b:
-                line1 += "%d - %d = \t\t\t" % (a, b)
+                line1 += "%2d - %2d = \t\t\t" % (a, b)
                 answer = a - b
-                line2 += "%d - %d = %d \t\t\t" % (a, b, answer)
+                line2 += "%2d - %2d = %2d \t\t\t" % (a, b, answer)
             else:
-                line1 += "%d - %d = \t\t\t" % (b, a)
+                line1 += "%2d - %2d = \t\t\t" % (b, a)
                 answer = b - a
-                line2 += "%d - %d = %d \t\t\t" % (b, a, answer)
+                line2 += "%2d - %2d = %2d \t\t\t" % (b, a, answer)
         # 乘法计算式
         if op == 3:
-            line1 += "%d * %d = \t\t\t" % (a, b)
+            line1 += "%2d * %2d = \t\t\t" % (a, b)
             answer = a * b
-            line2 += "%d * %d = %d \t\t\t" % (a, b, answer)
+            line2 += "%2d * %2d = %2d \t\t\t" % (a, b, answer)
         # 除法计算式 - 除数不能为 0  - 扩展（不能出现份数和没法整除的数）
         # 判定表方式制作
         if op == 4:
             if a == 0 and b != 0:
-                line1 += "%d ÷ %d = \t\t\t" % (a, b)
+                line1 += "%2d ÷ %2d = \t\t\t" % (a, b)
                 answer = a / b
-                line2 += "%d ÷ %d = %0.2f \t\t\t" % (a, b, answer)
+                line2 += "%2d ÷ %2d = %0.2f \t\t\t" % (a, b, answer)
             else:
                 if b == 0 and a != 0:
-                    line1 += "%d ÷ %d = \t\t\t" % (b, a)
+                    line1 += "%2d ÷ %2d = \t\t\t" % (b, a)
                     answer = b / a
-                    line2 += "%d ÷ %d = %0.2f \t\t\t" % (b, a, answer)
+                    line2 += "%2d ÷ %2d = %0.2f \t\t\t" % (b, a, answer)
                 else:
                     if a == 0 and b == 0:
                         # 重新随机生成 b 为 1-99 之间的数
                         b = random.randint(1, 99)
-                        line1 += "%d ÷ %d = \t\t\t" % (a, b)
+                        line1 += "%2d ÷ %2d = \t\t\t" % (a, b)
                         answer = a / b
-                        line2 += "%d ÷ %d = %0.2f \t\t\t" % (a, b, answer)
+                        line2 += "%2d ÷ %2d = %0.2f \t\t\t" % (a, b, answer)
                     else:
-                        line1 += "%d ÷ %d = \t\t\t" % (a, b)
+                        line1 += "%2d ÷ %2d = \t\t\t" % (a, b)
                         answer = a / b
-                        line2 += "%d ÷ %d = %0.2f \t\t\t" % (a, b, answer)
+                        line2 += "%2d ÷ %2d = %0.2f \t\t\t" % (a, b, answer)
     # 写入题目行
     line1 += "\n"
     f1.write(line1)  # 写入一行
@@ -109,10 +109,10 @@ for n in range(1, rows + 1):
 
 
 # 总出题数
-line1 = "-----结束--- 总共出了 (%d) 道四则运算题 ----" % (count)
+line1 = "-----结束--- 总共出了 (%2d) 道四则运算题 ----" % (count)
 f1.write(line1)  # 写入一行
 
-line2 = "-----结束--- 总共出了 (%d) 道四则运算题（含答案） ----" % (count)
+line2 = "-----结束--- 总共出了 (%2d) 道四则运算题（含答案） ----" % (count)
 f2.write(line2)  # 写入一行
 
 # 最后勿忘关闭文件
